@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-const snekfetch = require('snekfetch');
 const fetch = require('node-fetch');
 
 const fs = require('fs');
@@ -189,7 +188,7 @@ bot.on('message', (message) => {
     } else if(c == '!puke') {
         message.channel.send("eww no... wth");
     } else if (c.startsWith('!research')) {
-        var v = getInput(c, 1);
+        /*var v = getInput(c, 1);
         var api = "https://jsonplaceholder.typicode.com/posts";
         var apifailz = "https://www.google.com/search?q=" + v;
         snekfetch.get(api).then(r => {
@@ -210,7 +209,7 @@ bot.on('message', (message) => {
                     .setFooter("Post ID:" + entry.id);
                 message.channel.send({embed: embed});
             }
-        });
+        });*/
     } else if (c == '!secrets') {
         message.channel.send(fs.readFileSync('./secrets.txt').toString('utf-8'));
     } else if (c == '!semice') {

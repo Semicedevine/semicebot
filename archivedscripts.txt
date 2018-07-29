@@ -1,0 +1,51 @@
+https://github.com/AnIdiotsGuide/discordjs-bot-guide/blob/master/examples/welcome-message-every-x-users.md
+
+bot.on("guildMemberAdd", (member) => {
+    const guild = member.guild;
+    if (!newUsers[guild.id]) newUsers[guild.id] = new Discord.Collection();
+    newUsers[guild.id].set(member.id, member.user);
+  
+    if (newUsers[guild.id].size > 0) {
+      const userlist = newUsers[guild.id].map(u => u.toString()).join(" ");
+      var text = fs.readFileSync('./joinmessages.txt').toString('utf-8');
+      
+      var textByLine = text.split('\n');
+      guild.channels.find("name", "dumping-ground").send("Welcome " + userlist + " to the server!");
+      newUsers[guild.id].clear();
+    }
+  });
+
+bot.on("guildMemberRemove", (member) => {
+    const guild = member.guild;
+    if (newUsers[guild.id].has(member.id)) newUsers.delete(member.id);
+  });*/
+
+
+self
+
+  lSplit = l.split("[s]");
+    var f = "";
+    for (var i = 0; i < lSplit.length; i++) {
+        f += lSplit[i];
+    }
+
+
+self
+
+    else if (c.startsWith('!add')) {
+        if(message.guild.id=="469270948504403988") {
+            if(message.channel.id=="471053415716356106") {
+                var stream = fs.createWriteStream("joinmessages.txt");
+                stream.once('open', function(fd) {
+                    stream.write("My first row\n");
+                    stream.write("My second row\n");
+                    stream.end();
+                });
+                message.channel.send("cool, ok")
+            } else {
+                message.channel.send("wrong channel, smart one");
+            }
+        } else {
+                message.channel.send("wrong guide, smart one");
+        }
+    }

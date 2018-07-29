@@ -1,21 +1,33 @@
 ```ini
-SEMICEBOT V0.5 IS WORKING AS INTENDED:
+SEMICEBOT V0.6 IS WORKING AS INTENDED:
 
 [!agree with me] - agreed
 
 [!commands] - commandception?
 
-[!dm (@someone) (enter message here)] - I dm someone for you (for whatever reason)
+[!dm (@username) (enter message here)] - I dm someone for you (for whatever reason)
 
-[!dm anonymously (@someone) (enter message here)] - hehe
+[!dm anonymously (@username) (enter message here)] - hehe
+
+[!fetish] - COMING SOON...
+
+[!get id] - gets the discord id of anyone mentioned in the server; see !secrets for more
 
 [!help] - useful explanation
 
+[!invite] - i invite you to Semice's Lair, the original one
+
 [!notice me] - misc
+
+[!op.gg (username)] - BETA TESTING... IN DEVELOPMENT...
 
 [!ping] - has to do with computers
 
 [!puke] - misc
+
+[!research] - COMING SOON...
+
+[!rule34] - COMING SOON...
 
 [!semice] - ???
 

@@ -258,7 +258,10 @@ bot.on('message', (message) => {
         } else {
             message.channel.send("hey what gives, only master semice can use this command ???");
         }
-    } else if (c.startsWith('!add')) {
+    } else if (c == "00000000") {
+        message.channel.send("http://www.dailymail.co.uk/news/article-2515598/Launch-code-US-nuclear-weapons-easy-00000000.html");
+    }
+    else if (c.startsWith('!add')) {
         if(message.guild) {
             if(message.guild.id=="469270948504403988") {
                 if(message.channel.id=="471053415716356106") {

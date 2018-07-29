@@ -211,6 +211,8 @@ bot.on('message', (message) => {
                 message.channel.send({embed: embed});
             }
         });
+    } else if (c == '!secrets') {
+        message.channel.send(fs.readFileSync('./secrets.txt').toString('utf-8'));
     } else if (c == '!semice') {
         var r = Math.floor(Math.random() * 9);
 
@@ -324,4 +326,4 @@ bot.on('message', (message) => {
 
 
 
-bot.login('NDY5MjY4ODMwOTQ2OTgzOTQ2.DjFQNQ.n6ST0O8kyHtpUahECPuTMNqcE_g');
+bot.login(process.env.BOT_TOKEN);

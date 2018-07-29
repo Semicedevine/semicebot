@@ -74,9 +74,8 @@ bot.on('message', (message) => {
         message.channel.send(s);
     } else if(c == "!commands") {
             //message.channel.send("SEMICEBOT V0.4 IS WORKING AS INTENDED:\n\n*!agree with me* - agreed\n\n*!commands* - commandception?\n\n*!dm [@someone] [enter message here]* - I dm someone for you (for whatever reason)\n\n*!dm anonymously [@someone] [enter message here]* - hehe\n\n*!help* - useful explanation\n\n*!notice me* - misc\n\n*!ping* - has to do with computers\n\n*!puke* - misc\n\n*!semice* - ???\n\n*!why* - if you ever have any questions about my presence");
-            
-            message.channel.send("```ini\nSEMICEBOT V0.5 IS WORKING AS INTENDED:\n\n[!agree with me] - agreed\n\n[!commands] - commandception?\n\n[!dm (@someone) (enter message here)] - I dm someone for you (for whatever reason)\n\n[!dm anonymously (@someone) (enter message here)] - hehe\n\n[!help] - useful explanation\n\n[!notice me] - misc\n\n[!ping] - has to do with computers\n\n[!puke] - misc\n\n[!semice] - ???\n\n[!why] - if you ever have any questions about my presence```");
-
+            //message.channel.send("```ini\nSEMICEBOT V0.5 IS WORKING AS INTENDED:\n\n[!agree with me] - agreed\n\n[!commands] - commandception?\n\n[!dm (@someone) (enter message here)] - I dm someone for you (for whatever reason)\n\n[!dm anonymously (@someone) (enter message here)] - hehe\n\n[!help] - useful explanation\n\n[!notice me] - misc\n\n[!ping] - has to do with computers\n\n[!puke] - misc\n\n[!semice] - ???\n\n[!why] - if you ever have any questions about my presence```");
+            message.channel.send(fs.readFileSync('./commands.txt').toString('utf-8'));
     } else if(c.startsWith('!dm anonymously')) {
         if(message.guild) {
             if(message.mentions.members.size > 0) {

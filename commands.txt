@@ -1,0 +1,22 @@
+```ini
+SEMICEBOT V0.5 IS WORKING AS INTENDED:
+
+[!agree with me] - agreed
+
+[!commands] - commandception?
+
+[!dm (@someone) (enter message here)] - I dm someone for you (for whatever reason)
+
+[!dm anonymously (@someone) (enter message here)] - hehe
+
+[!help] - useful explanation
+
+[!notice me] - misc
+
+[!ping] - has to do with computers
+
+[!puke] - misc
+
+[!semice] - ???
+
+[!why] - if you ever have any questions about my presence```

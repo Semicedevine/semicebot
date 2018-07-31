@@ -28,7 +28,7 @@ CREATE TEMP TABLE IF NOT EXISTS users (
 `
 
 client.query(createTableText, (err, res) => {
-    console.log(err ? err.stack : res.rows[0].message) // Hello World!
+    console.log("it workd???") // Hello World!
     client.end()
   })
 

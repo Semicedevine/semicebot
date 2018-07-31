@@ -51,6 +51,8 @@ CREATE TEMP TABLE IF NOT EXISTS users (
     // create a new user
     await client.query(`INSERT INTO joinMessages VALUES ('What is life', 'Semicedevine', '2815823125');`);
 
+    console.log(await client.query(`SELECT * FROM joinMessages`));
+
 
     // const { rows } = await client.query('SELECT * FROM users')
     

@@ -27,6 +27,11 @@ CREATE TEMP TABLE IF NOT EXISTS users (
 );
 `
 
+client.query(createTableText, (err, res) => {
+    console.log(err ? err.stack : res.rows[0].message) // Hello World!
+    client.end()
+  })
+
 /*client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
     if (err) throw err;
     for (let row of res.rows) {

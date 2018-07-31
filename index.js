@@ -38,12 +38,10 @@ CREATE TEMP TABLE IF NOT EXISTS users (
     data JSONB
     );
     `*/
-    const createTableText = `CREATE TABLE weather (
-        city varchar(80),
-        temp_lo int, -- low temperature
-        temp_hi int, -- high temperature
-        prcp real, -- precipitation
-        date date
+    const createTableText = `CREATE TABLE joinMessages (
+        message text,
+        contributer text, -- low temperature
+        contributerId text
        );
        `
     // create our temp table
@@ -51,9 +49,10 @@ CREATE TEMP TABLE IF NOT EXISTS users (
 
     const newUser = { email: 'brian.m.carlson@gmail.com' }
     // create a new user
-    await client.query('INSERT INTO users(data) VALUES($1)', [newUser])
+    await client.query(`INSERT INTO joinMessages VALUES ('What is life', 'Semicedevine', '2815823125');`);
 
-    const { rows } = await client.query('SELECT * FROM users')
+
+    // const { rows } = await client.query('SELECT * FROM users')
     
     // expected output: "resolved"
   }

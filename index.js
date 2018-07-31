@@ -18,6 +18,15 @@ client.connect()
       console.log(process.env.DATABASE_URL.toString());
   });
 
+  const createTableText = `
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+
+CREATE TEMP TABLE IF NOT EXISTS users (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  data JSONB
+);
+`
+
 /*client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
     if (err) throw err;
     for (let row of res.rows) {

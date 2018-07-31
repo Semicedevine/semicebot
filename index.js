@@ -45,7 +45,7 @@ CREATE TEMP TABLE IF NOT EXISTS users (
        );
        `
     // create our temp table
-    await client.query(createTableText)
+    // await client.query(createTableText)
 
     const newUser = { email: 'brian.m.carlson@gmail.com' }
     // create a new user

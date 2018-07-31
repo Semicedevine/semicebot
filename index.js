@@ -22,11 +22,10 @@ client.query('SELECT table_schema,table_name FROM information_schema.tables;', (
     client.end();
   });
 
-await client.connect()
-
-const res = await client.query('SELECT $1::text as message', ['Hello world!'])
-console.log(res.rows[0].message) // Hello world!
-await client.end();
+client.query('SELECT $1::text as message', ['Hello world!'], (err, res) => {
+    console.log(err ? err.stack : res.rows[0].message) // Hello World!
+    client.end()
+  })
 
 
 function getInput(msg, number) {

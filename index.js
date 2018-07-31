@@ -18,27 +18,35 @@ client.connect()
       console.log(process.env.DATABASE_URL.toString());
   });
 
-  const createTableText = `
+  /*const createTableText = `
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 CREATE TEMP TABLE IF NOT EXISTS users (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   data JSONB
 );
-`
+`*/
 
-function resolveAfter2Seconds() {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve('resolved');
-      }, 2000);
-    });
-  }
   
   async function asyncCall() {
     console.log('calling');
-    var result = await resolveAfter2Seconds();
-    console.log(result);
+    const createTableText = `
+    CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+
+    CREATE TEMP TABLE IF NOT EXISTS users (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    data JSONB
+    );
+    `
+    // create our temp table
+    await client.query(createTableText)
+
+    const newUser = { email: 'brian.m.carlson@gmail.com' }
+    // create a new user
+    await client.query('INSERT INTO users(data) VALUES($1)', [newUser])
+
+    const { rows } = await client.query('SELECT * FROM users')
+    
     // expected output: "resolved"
   }
   

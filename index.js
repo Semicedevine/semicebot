@@ -30,14 +30,22 @@ CREATE TEMP TABLE IF NOT EXISTS users (
   
   async function asyncCall() {
     console.log('calling');
-    const createTableText = `
+    /*const createTableText = `
     CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
     CREATE TEMP TABLE IF NOT EXISTS users (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     data JSONB
     );
-    `
+    `*/
+    const createTableText = `CREATE TABLE weather (
+        city varchar(80),
+        temp_lo int, -- low temperature
+        temp_hi int, -- high temperature
+        prcp real, -- precipitation
+        date date
+       );
+       `
     // create our temp table
     await client.query(createTableText)
 

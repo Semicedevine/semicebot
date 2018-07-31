@@ -12,7 +12,11 @@ const client = new Client({
     ssl: true,
   });
 
-client.connect();
+client.connect()
+  .then(() => {
+      console.log("THE FOLLOWING IS THE DATABASE_URL, PAY ATTENTION");
+      console.log(process.env.DATABASE_URL.toString());
+  });
 
 /*client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
     if (err) throw err;

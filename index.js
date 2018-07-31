@@ -52,9 +52,9 @@ CREATE TEMP TABLE IF NOT EXISTS users (
   
 asyncCall();
 
-client.query(createTableText, (err, res) => {
+/*client.query(createTableText, (err, res) => {
     console.log("it workd???") // Hello World!
-  })
+  })*/
 
 /*client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
     if (err) throw err;

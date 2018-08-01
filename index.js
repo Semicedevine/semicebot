@@ -49,7 +49,7 @@ CREATE TEMP TABLE IF NOT EXISTS users (
 
     const newUser = { email: 'brian.m.carlson@gmail.com' }
     // create a new user
-    await client.query(`INSERT INTO joinMessages VALUES ('What is life', 'Semicedevine', '2815823125');`);
+    await client.query(`INSERT INTO joinMessages VALUES ('What is life', 'Semicedevine', '206849393259839498'), ('really dude?', 'Semicedevine', '206849393259839498');`);
 
     console.log(await client.query(`SELECT * FROM joinMessages`));
 

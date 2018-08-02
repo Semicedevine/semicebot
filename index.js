@@ -45,11 +45,11 @@ CREATE TEMP TABLE IF NOT EXISTS users (
        );
        `
     // create our temp table
-    // await client.query(createTableText)
+    await client.query(createTableText)
 
     const newUser = { email: 'brian.m.carlson@gmail.com' }
     // create a new user
-    // await client.query(`INSERT INTO join_messages VALUES ('What is life', 'Semicedevine', '206849393259839498'), ('really dude?', 'Semicedevine', '206849393259839498');`);
+    await client.query(`INSERT INTO join_messages VALUES ('What is life', 'Semicedevine', '206849393259839498'), ('really dude?', 'Semicedevine', '206849393259839498');`);
 
     console.log(await client.query(`SELECT * FROM join_messages`));
 
